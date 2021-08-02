@@ -1,4 +1,4 @@
-#GeomLAB - open source project develop by Damir Issayev.
+# GeomLAB - open source project develop by Damir Issayev.
 This is app for solve geometrical problems and working with geometric objects both visually and in the language mathematics.
 
 Use .NET Winforms on the C# language.
