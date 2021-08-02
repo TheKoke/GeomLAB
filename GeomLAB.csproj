@@ -7,13 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fonts\Dosis.ttf" />
+    <None Remove="fonts\Dosis.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Fonts\Dosis.ttf">
+    <EmbeddedResource Include="fonts\Dosis.ttf">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="db\" />
   </ItemGroup>
 
 </Project>

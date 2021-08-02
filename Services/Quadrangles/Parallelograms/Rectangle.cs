@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace GeomLAB.Services.Quadrangles
+namespace GeomLAB.services.Quadrangles
 {
     public class Rectangle : Parallelogram
     {

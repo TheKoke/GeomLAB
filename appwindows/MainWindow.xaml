@@ -309,14 +309,10 @@
 
             <Border Grid.Row="1"
                     Grid.Column="1">
-
                 <Frame x:Name="MainFrame"
                        NavigationUIVisibility="Hidden">
-
                 </Frame>
             </Border>
-
         </Grid>
-
     </Border>
 </Window>

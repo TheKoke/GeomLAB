@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using static GeomLAB.Services.ArithmeticMethods;
+using static GeomLAB.services.ArithmeticMethods;
 
-namespace GeomLAB.Services.Triangles
+namespace GeomLAB.services.Triangles
 {
     public abstract class Triangle : IFigure
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace GeomLAB.Services.Quadrangles
+namespace GeomLAB.services.Quadrangles
 {
      /// <summary>
      /// Class of Kite or Delthoid, it is a quadrangle where two opposite sides are equal.

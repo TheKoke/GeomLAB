@@ -3,7 +3,7 @@ using System.Linq;
 
 #pragma warning disable CS0659
 
-namespace GeomLAB.Services.Triangles
+namespace GeomLAB.services.Triangles
 {
     public class ArbitraryTriangle : Triangle
     {

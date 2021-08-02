@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace GeomLAB.Services
+namespace GeomLAB.services
 {
     public class Polygon : IFigure
     {

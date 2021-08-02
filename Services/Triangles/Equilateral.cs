@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GeomLAB.Services.Triangles
+namespace GeomLAB.services.Triangles
 {
     public class Equilateral : Triangle
     {

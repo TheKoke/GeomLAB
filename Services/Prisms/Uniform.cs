@@ -1,7 +1,7 @@
 ﻿using System;
 using GeomLAB.Services.Quadrangles;
 
-namespace GeomLAB.Services.Prisms
+namespace GeomLAB.services.Prisms
 {
     // <summary>
     /// This class of Uniform or Semi-Regular Polyhedron.
