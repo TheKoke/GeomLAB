@@ -85,6 +85,15 @@ namespace GeomLAB.Services
         }
 
         /// <summary>
+        /// Returns the Shlafli Symbol of this Polygon.
+        /// </summary>
+        /// <returns></returns>
+        public string ShlaflySymbol()
+        {
+            return string.Concat("{", $"{CountOfCorners()}", "}");
+        }
+
+        /// <summary>
         /// Find the perimeter of this polygon.
         /// </summary>
         /// <returns></returns>

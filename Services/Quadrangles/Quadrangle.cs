@@ -44,6 +44,15 @@ namespace GeomLAB.Services.Quadrangles
         }
 
         /// <summary>
+        /// Returns the Shlafli Symbol of this Quadrangle.
+        /// </summary>
+        /// <returns></returns>
+        public string ShlaflySymbol()
+        {
+            return string.Concat("{", $"{CountOfCorners()}", "}");
+        }
+
+        /// <summary>
         /// Returns lengths of sides of this Figure.
         /// </summary>
         /// <returns></returns>
