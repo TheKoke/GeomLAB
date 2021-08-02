@@ -40,5 +40,38 @@ namespace GeomLAB
             MainFrame.Content = new Pages.Planymetry();
             TitleText.Text = "Planymetry";
         }
+
+        private void BStereometry_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Pages.Stereometry();
+            TitleText.Text = "Stereometry";
+        }
+
+        private void BCoordinate_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Pages.CoordinateSystem();
+            TitleText.Text = "Coordinate System working";
+        }
+
+        private void BTriangle_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Pages.Triangles();
+            TitleText.Text = "Triangles games";
+        }
+
+        private void BVectors_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Pages.Vectors();
+            TitleText.Text = "Vector =====> ?";
+        }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                MainFrame.Content = null;
+                TitleText.Text = "GeomLab";
+            }
+        }
     }
 }
