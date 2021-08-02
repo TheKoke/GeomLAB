@@ -31,7 +31,7 @@
 
                 <TextBox x:Name="Scope"
                            Grid.Column="3"
-                           Margin="7">
+                           Margin="7" Cursor="IBeam">
                     <TextBox.Style>
                         <Style TargetType="TextBox">
                             <Setter Property="Background" Value="#2A2933"/>
