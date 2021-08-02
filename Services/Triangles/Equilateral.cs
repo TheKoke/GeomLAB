@@ -51,3 +51,4 @@ namespace GeomLAB.Services.Triangles
             return (float)(Math.Pow(Sides[0], 2) * Math.Sqrt(3) / 4);
         }
     }
+}

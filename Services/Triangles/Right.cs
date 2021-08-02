@@ -71,9 +71,9 @@ namespace GeomLAB.Services.Triangles
         {
             float result = 1;
 
-            for (byte i = 1; i < ArithmeticMethods.DeleteArrayElement(Sides, Array.IndexOf(Sides, Sides.Max())).Length; i++)
+            for (byte i = 1; i < Sides.Where(x => x != Sides.Max()).Count(); i++)
             {
-                result *= ArithmeticMethods.DeleteArrayElement(Sides, Array.IndexOf(Sides, Sides.Max()))[i];
+                result *= Sides.Where(x => x != Sides.Max()).ElementAt(i);
             }
 
             return result / 2;
