@@ -100,7 +100,8 @@
                             Content="Planymetry"
                             Foreground="White"
                             FontSize="17"
-                            FontFamily="Fonts/#Dosis">
+                            FontFamily="Fonts/#Dosis"
+                            Click="BPlanymetry_Click">
 
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
@@ -252,7 +253,7 @@
             <Border Grid.Row="1"
                     Grid.Column="1">
 
-                <Frame x:Name="MainRoot">
+                <Frame x:Name="MainFrame">
 
                 </Frame>
             </Border>
