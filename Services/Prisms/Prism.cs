@@ -1,13 +1,14 @@
 ﻿using System;
+using GeomLAB.Services.Quadrangles;
 
 namespace GeomLAB.Services.Prisms
 {
     /* types of prism :
      * 1. Right
      * 2. Semi-Regular or Uniform
-     * 3. Oblique (Side Face are Parallelogram)
+     * 3. Oblique (Lateral Face are Parallelogram)
      * 4. Truncated Prism (non - parallel bases)
-     * 5. Frustum (Side Faces are Trapezoids)
+     * 5. Frustum (Lateral Faces are Trapezoids)
      * 6. Prisms inheritance from rigth prism : 
      *      1. Paralellepiped
      *      2. Cuboid
@@ -20,14 +21,14 @@ namespace GeomLAB.Services.Prisms
         public IFigure Base { get; protected set; }
 
         /// <summary>
-        /// Side Face of this Prism.
+        /// Lateral Face of this Prism.
         /// </summary>
-        public Quadrangles.Quadrangle SideFace { get; protected set; }
+        public Quadrangle LateralFace { get; protected set; }
 
         /// <summary>
-        /// Length of Side Ribs of this Prism.
+        /// Length of Lateral Ribs of this Prism.
         /// </summary>
-        public float SideRibs { get; protected set; }
+        public float LateralRibs { get; protected set; }
 
         /// <summary>
         /// Length of Height of this Prism.
@@ -42,6 +43,15 @@ namespace GeomLAB.Services.Prisms
         public Prism()
         {
             Diagonales = new float[Base.CountOfCorners() * (Base.CountOfCorners() - 3)];
+        }
+
+        /// <summary>
+        /// Returns the Shlafli Symbol of this Prism.
+        /// </summary>
+        /// <returns></returns>
+        public string ShlaflySymbol()
+        {
+            return string.Concat("{", $"{Base.CountOfCorners()}", "} X {}");
         }
 
         /// <summary>

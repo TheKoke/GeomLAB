@@ -19,7 +19,7 @@ namespace GeomLAB.Services.Triangles
         /// <summary>
         /// Heights lengths of Triangle.
         /// </summary>
-        public float[] Heights { get; protected set; }
+        public float[] Altitudes { get; protected set; }
 
         /// <summary>
         /// Lengths of medianes of this Triangle.
@@ -51,7 +51,7 @@ namespace GeomLAB.Services.Triangles
             Sides = new float[3];
             Angles = new string[3];
             ExteriorAngles = new string[3];
-            Heights = new float[3];
+            Altitudes = new float[3];
         }
 
         protected static bool IsProportional(Triangle tr1, Triangle tr2)

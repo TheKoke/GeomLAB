@@ -13,10 +13,10 @@ namespace GeomLAB.Services.Prisms
         public Cuboid(float a) : this()
         {
             Base = new Square(a);
-            SideFace = new Square(a);
+            LateralFace = new Square(a);
 
             Height = a;
-            SideRibs = a;
+            LateralRibs = a;
         }
 
         /// <summary>

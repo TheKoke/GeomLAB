@@ -27,9 +27,9 @@ namespace GeomLAB.Services.Triangles
         /// </summary>
         protected override void SetHeights()
         {
-            for (int i = 0; i < Heights.Length; i++)
+            for (int i = 0; i < Altitudes.Length; i++)
             {
-                Heights[i] = Sides[i] * (float)Math.Sqrt(3) / 2;
+                Altitudes[i] = Sides[i] * (float)Math.Sqrt(3) / 2;
             }
         }
 

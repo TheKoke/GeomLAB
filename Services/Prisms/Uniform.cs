@@ -16,10 +16,10 @@ namespace GeomLAB.Services.Prisms
         public Uniform(IFigure basic) : this()
         {
             Base = basic;
-            SideFace = new Square(Base.GetSides()[0]);
+            LateralFace = new Square(Base.GetSides()[0]);
 
             Height = Base.GetSides()[0];
-            SideRibs = Height;
+            LateralRibs = Height;
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace GeomLAB.Services.Prisms
         /// <returns></returns>
         public override float SideSurfaceArea()
         {
-            return Base.CountOfCorners() * SideFace.Area();
+            return Base.CountOfCorners() * LateralFace.Area();
         }
 
         /// <summary>

@@ -15,11 +15,11 @@ namespace GeomLAB.Services.Prisms
         public Parallelipiped(Rectangle basic, Rectangle face) : this()
         {
             Base = basic;
-            SideFace = face;
-            SideEdge = new Rectangle(Base.GetSides()[0], SideFace.Sides[0]);
+            LateralFace = face;
+            SideEdge = new Rectangle(Base.GetSides()[0], LateralFace.Sides[0]);
 
-            Height = SideFace.Sides[0];
-            SideRibs = Height;
+            Height = LateralFace.Sides[0];
+            LateralRibs = Height;
         }
 
         /// <summary>

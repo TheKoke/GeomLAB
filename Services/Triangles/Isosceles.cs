@@ -52,15 +52,15 @@ namespace GeomLAB.Services.Triangles
         /// </summary>
         protected override void SetHeights()
         {
-            for (byte i = 0; i < Heights.Length; i++)
+            for (byte i = 0; i < Altitudes.Length; i++)
             {
                 if (Sides[i] == BaseSide)
                 {
-                    Heights[i] = (float)Math.Sqrt(4 * Leg * Leg + BaseSide * BaseSide);
+                    Altitudes[i] = (float)Math.Sqrt(4 * Leg * Leg + BaseSide * BaseSide);
                     continue;
                 }
 
-                Heights[i] = Leg * new Trigonometry(3).Sin(Angles[2]);
+                Altitudes[i] = Leg * new Trigonometry(3).Sin(Angles[2]);
             }
         }
 
@@ -83,7 +83,7 @@ namespace GeomLAB.Services.Triangles
         {
             //1 / 2 * base * h, where h = 1/2sqrt(4leg^2 - b^2)
 
-            return BaseSide * Heights[Array.IndexOf(Sides, BaseSide)] / 2;
+            return BaseSide * Altitudes[Array.IndexOf(Sides, BaseSide)] / 2;
         }
     }
 }

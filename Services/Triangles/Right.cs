@@ -41,16 +41,16 @@ namespace GeomLAB.Services.Triangles
         /// </summary>
         protected override void SetHeights()
         {
-            for (byte i = 0; i < Heights.Length; i++)
+            for (byte i = 0; i < Altitudes.Length; i++)
             {
                 if (Sides[i] == Sides.Max())
                 {
-                    Heights[i] = 2 * Area() / Sides[i];
+                    Altitudes[i] = 2 * Area() / Sides[i];
 
                     continue;
                 }
 
-                Heights[i] = Sides[i];
+                Altitudes[i] = Sides[i];
             }
         }
 

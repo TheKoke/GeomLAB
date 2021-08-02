@@ -14,9 +14,9 @@ namespace GeomLAB.Services.Prisms
         {
             Base = basic;
             Height = height;
-            SideRibs = height;
+            LateralRibs = height;
 
-            SideFace = new Rectangle(Base.Perimeter() / Base.CountOfCorners(), height);
+            LateralFace = new Rectangle(Base.Perimeter() / Base.CountOfCorners(), height);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace GeomLAB.Services.Prisms
         /// <returns></returns>
         public override float SideSurfaceArea()
         {
-            return Base.CountOfCorners() * SideFace.Area();
+            return Base.CountOfCorners() * LateralFace.Area();
         }
 
         /// <summary>

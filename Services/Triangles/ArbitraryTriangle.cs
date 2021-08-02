@@ -72,13 +72,13 @@ namespace GeomLAB.Services.Triangles
                 AnglesInRadians[i] *= (float)Math.PI / 180;
             }
 
-            for (byte i = 0; i < Heights.Length; i++)
+            for (byte i = 0; i < Altitudes.Length; i++)
             {
-                Heights[i] = Sides[i] / trg.Sin(AnglesInRadians.Where(x => Array.IndexOf(AnglesInRadians, x) != i).Sum());
+                Altitudes[i] = Sides[i] / trg.Sin(AnglesInRadians.Where(x => Array.IndexOf(AnglesInRadians, x) != i).Sum());
 
                 for (byte j = 0; j < AnglesInRadians.Where(x => Array.IndexOf(AnglesInRadians, x) != i).Count(); j++)
                 {
-                    Heights[i] *= trg.Sin(AnglesInRadians.Where(x => Array.IndexOf(AnglesInRadians, x) != i).ElementAt(j));
+                    Altitudes[i] *= trg.Sin(AnglesInRadians.Where(x => Array.IndexOf(AnglesInRadians, x) != i).ElementAt(j));
                 }
             }
         }
