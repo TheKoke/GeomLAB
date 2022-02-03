@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GeomLAB.Services.Triangles.IsoscelesRight" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\Triangles\IsoscelesRight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Triangles.Isosceles" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAIAAAAAAAAAAAAAAACAAAAAAAQEAAAA=</HashCode>
+      <FileName>Services\Triangles\Isosceles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Triangles.Right" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\Triangles\Right.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Triangles.Triangle" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEAAAIIwAGAUQQIAAAgAAAAAAAACIAAEAAAQAABEA=</HashCode>
+      <FileName>Services\Triangles\Triangle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GeomLAB.Services.Triangles.Equilateral" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\Triangles\Equilateral.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Triangles.ArbitraryTriangle" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAgAAAAAAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\Triangles\ArbitraryTriangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Quadrangles.Quadrangle" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAIQAEAEQCIAAAAAAAAIACACIAAEAAAQAABAA=</HashCode>
+      <FileName>Services\Quadrangles\Quadrangle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GeomLAB.Services.Quadrangles.ArbitraryQuadrangle" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAACAAAAAAAAAAAABCAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\Quadrangles\ArbitraryQuadrangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Quadrangles.Parallelogram" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAACAAAAEAAAAAAABCAAAAAAAQAgAAA=</HashCode>
+      <FileName>Services\Quadrangles\Parallelograms\Parallelogram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Quadrangles.Rectangle" Collapsed="true">
+    <Position X="14.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAACAAAAAAAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\Quadrangles\Parallelograms\Rectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Quadrangles.Rhombus" Collapsed="true">
+    <Position X="16.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\Quadrangles\Parallelograms\Rhombus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Quadrangles.Square" Collapsed="true">
+    <Position X="14.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAACAAAAAAAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\Quadrangles\Parallelograms\Square.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Quadrangles.Kite" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAQAAUACAAAAAAAAAAAAACAAAAAAQQAAAAA=</HashCode>
+      <FileName>Services\Quadrangles\Non-Parallelograms\Kite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Quadrangles.Trapezoid" Collapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAACAAAAAAAAAEAACCAAQAAAAQAAAAA=</HashCode>
+      <FileName>Services\Quadrangles\Non-Parallelograms\Trapezoid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Prisms.Prism" Collapsed="true">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJAAAAAgCAAAABAAAAIAAAAIAAAIACAAQQAA=</HashCode>
+      <FileName>Services\Prisms\Prism.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Prisms.Uniform" Collapsed="true">
+    <Position X="5.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgCAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Services\Prisms\Uniform.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Prisms.Oblique" Collapsed="true">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgCAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Services\Prisms\Oblique.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Prisms.Right" Collapsed="true">
+    <Position X="8" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgCAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Services\Prisms\RightPrisms\Right.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Prisms.Parallelipiped" Collapsed="true">
+    <Position X="9.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAkCAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Services\Prisms\RightPrisms\Prallelipiped.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeomLAB.Services.Prisms.Cuboid" Collapsed="true">
+    <Position X="6.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgCAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Services\Prisms\RightPrisms\Cuboid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

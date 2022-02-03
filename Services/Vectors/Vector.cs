@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeomLAB.Services
 {
@@ -11,7 +7,7 @@ namespace GeomLAB.Services
         /// <summary>
         /// bool field mains is this vector based on the Three-Dimensional space
         /// </summary>
-        public bool IsThreeDimensional;
+        public bool IsThreeDimensional { get; private set; }
 
         /// <summary>
         /// Directional cosines of this vector, it is a cosines of angles between vector and axises

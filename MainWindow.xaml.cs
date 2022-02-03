@@ -34,5 +34,11 @@ namespace GeomLAB
                 DragMove();
             }
         }
+
+        private void BPlanymetry_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Pages.Planymetry();
+            TitleText.Text = "Planymetry";
+        }
     }
 }
