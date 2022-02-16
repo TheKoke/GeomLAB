@@ -7,7 +7,6 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Height="600" Width="900">
-
     <Window.Template>
         <ControlTemplate TargetType="Window">
             <Border Background="{x:Null}" 
@@ -79,7 +78,7 @@
                                Text="GeomLab"
                                Foreground="Gainsboro"
                                FontSize="24"
-                               FontFamily="Fonts/#Dosis" 
+                               FontFamily="Dosis ExtraLight" 
                                HorizontalAlignment="Center"/>
 
                 </StackPanel>
@@ -93,7 +92,7 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            Margin="0 10 0 0"
-                           FontFamily="Fonts/#Dosis"
+                           FontFamily="Dosis ExtraLight"
                            FontSize="23"
                            Foreground="Gainsboro" 
                            MouseDown="TextBlock_MouseDown" >
@@ -103,7 +102,7 @@
                     <TextBlock x:Name="TBLogin"
                                Text="log: Admin"
                                HorizontalAlignment="Center"
-                               FontFamily="Fonts/#Dosis"
+                               FontFamily="Dosis ExtraLight"
                                FontSize="13"
                                Foreground="Gainsboro">
                         
@@ -122,7 +121,7 @@
                             Content="Planymetry"
                             Foreground="White"
                             FontSize="17"
-                            FontFamily="Fonts/#Dosis"
+                            FontFamily="Dosis ExtraLight"
                             Click="BPlanymetry_Click">
 
                         <Button.Style>
@@ -153,7 +152,7 @@
                             Content="Stereometry"
                             Foreground="White"
                             FontSize="17"
-                            FontFamily="Fonts/#Dosis"
+                            FontFamily="Dosis ExtraLight"
                             Click="BStereometry_Click">
 
                         <Button.Style>
@@ -184,7 +183,7 @@
                             Content="Coordinate System"
                             Foreground="White"
                             FontSize="16"
-                            FontFamily="Fonts/#Dosis"
+                            FontFamily="Dosis ExtraLight"
                             Click="BCoordinate_Click">
 
                         <Button.Style>
@@ -215,7 +214,7 @@
                             Content="Triangles"
                             Foreground="White"
                             FontSize="17"
-                            FontFamily="Fonts/#Dosis"
+                            FontFamily="Dosis ExtraLight"
                             Click="BTriangle_Click">
 
                         <Button.Style>
@@ -246,7 +245,7 @@
                             Content="Vectors"
                             Foreground="White"
                             FontSize="17"
-                            FontFamily="Fonts/#Dosis"
+                            FontFamily="Dosis ExtraLight"
                             Click="BVectors_Click">
 
                         <Button.Style>
@@ -277,7 +276,7 @@
                             Content="Settings"
                             Foreground="White"
                             FontSize="17"
-                            FontFamily="Fonts/#Dosis"
+                            FontFamily="Dosis ExtraLight"
                             Margin="0 105 0 0">
 
                         <Button.Style>
