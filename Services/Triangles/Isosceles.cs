@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace GeomLAB.Services.Triangles
+namespace GeomLAB.services.Triangles
 {
     public class Isosceles : Triangle
     {

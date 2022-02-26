@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GeomLAB.Services.Quadrangles
+namespace GeomLAB.services.Quadrangles
 {
     public class Square : Rectangle
     {

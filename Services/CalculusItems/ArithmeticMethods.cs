@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GeomLAB.Services
+namespace GeomLAB.services
 {
     public static class ArithmeticMethods
     {

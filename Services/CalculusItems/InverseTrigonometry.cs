@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GeomLAB.Services
+namespace GeomLAB.services
 {
     public class InverseTrigonometry
     {
