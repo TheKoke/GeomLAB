@@ -15,9 +15,7 @@ namespace GeomLAB.services.Quadrangles
         public string EqualAngles { get; protected set; }
 
         public Kite() : base()
-        {
-
-        }
+        {}
 
         public Kite(float longSide, float shortSide) : this()
         {
@@ -39,7 +37,7 @@ namespace GeomLAB.services.Quadrangles
         {
             if (Sides.Where(x => x != 0).Count() == 4)
             {
-                string[] corners = new string[]
+                string[] vertices = new string[]
                 {
                     ((180 - float.Parse(EqualAngles) / (LongSide + ShortSide)) * LongSide).ToString(),
                     ((180 - float.Parse(EqualAngles) / (LongSide + ShortSide)) * ShortSide).ToString()
@@ -53,9 +51,9 @@ namespace GeomLAB.services.Quadrangles
                         continue;
                     }
 
-                    for (byte j = (byte)(i < 2 ? 0 : 1); j < corners.Length; j++)
+                    for (byte j = (byte)(i < 2 ? 0 : 1); j < vertices.Length; j++)
                     {
-                        Angles[i] = (float.Parse(corners[j]) * 2).ToString();
+                        Angles[i] = (float.Parse(vertices[j]) * 2).ToString();
                     }
                 }
             }
@@ -66,10 +64,7 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetHeights()
         {
-            for (byte i = 0; i < Heights.Length; i++)
-            {
-                Heights[i] = Sides[i];
-            }
+            base.SetHeights();
         }
 
         /// <summary>
@@ -77,14 +72,11 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetRadiuses()
         {
-            if (Sides.Where(x => Array.IndexOf(Sides, x) % 2 == 1).Sum() == Sides.Where(x => Array.IndexOf(Sides, x) % 2 == 0).Sum())
-            {
-                InscribedRadius = Heights[3] / 2;
-            }
+            InscribedRadius = Diagonales.Min();
 
-            if (Array.ConvertAll(Angles, int.Parse).Where(x => Array.IndexOf(Angles, x) % 2 == 0).Sum() == 180)
+            if (EqualAngles == "90")
             {
-                CircumscribedRadius = Diagonales.Max() / 2;
+               CircumscribedRadius = Math.Sqrt(LongSide * LongSide + ShortSide * ShortSide) / 2;
             }
         }
 
@@ -111,7 +103,7 @@ namespace GeomLAB.services.Quadrangles
         /// <returns></returns>
         public override float Area()
         {
-            return LongSide * ShortSide * new Trigonometry(5).Sin(EqualAngles);
+            return LongSide * ShortSide * new Trigonometry(7).Sin(EqualAngles);
         }
     }
 }
