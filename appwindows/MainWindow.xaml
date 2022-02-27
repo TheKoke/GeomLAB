@@ -52,6 +52,7 @@
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Background" Value="Firebrick"/>
+                                <Setter Property="FontFamily" Value="./#Dosis"/>
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter Property="Background" Value="DarkRed"/>
@@ -78,7 +79,7 @@
                                Text="GeomLab"
                                Foreground="Gainsboro"
                                FontSize="24"
-                               FontFamily="Dosis ExtraLight" 
+                               FontFamily="fonts/#Dosis" 
                                HorizontalAlignment="Center"/>
 
                 </StackPanel>

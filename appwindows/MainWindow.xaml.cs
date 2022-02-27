@@ -24,7 +24,7 @@ namespace GeomLAB
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            Close();
         }
 
         private void Title_MouseDown(object sender, MouseButtonEventArgs e)

@@ -10,9 +10,60 @@
         Height="350" Width="325"
         Background="{x:Null}">
     <Border CornerRadius="8"
-            Background="#39385D">
+            Background="#181735">
         <Grid>
-            <Button x:Name="BClosing"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="1"
+                Grid.Row="1"
+                Orientation="Vertical">
+                <TextBlock Text="GeomLab"
+                           TextAlignment="Center"
+                           Foreground="LightGray"
+                           FontSize="32"/>
+                
+                <TextBox x:Name="LoginTB"
+                         Margin="0 60 0 0"
+                         Height="25"
+                         BorderThickness="0"
+                         Background="#282745"
+                         FontSize="15"
+                         Foreground="LightGray" 
+                         FontFamily="Modern No. 20"
+                         TextAlignment="Left"
+                         Padding="10 5 0 0">
+
+                </TextBox>
+
+                <TextBox x:Name="PasswordTB"
+                         Margin="0 5 0 0"
+                         Height="25"
+                         BorderThickness="0"
+                         Background="#282745"
+                         FontSize="15"
+                         Foreground="LightGray" 
+                         FontFamily="Modern No. 20"
+                         TextAlignment="Left"
+                         Padding="10 5 0 0">
+
+                </TextBox>
+
+
+            </StackPanel>
+
+            <Button Grid.Column="2"
+                x:Name="BClosing"
                 Width="25"
                 Height="25"
                 HorizontalAlignment="Right"

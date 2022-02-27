@@ -1,5 +1,5 @@
 ﻿using System;
-using GeomLAB.Services.Quadrangles;
+using GeomLAB.services.Quadrangles;
 
 namespace GeomLAB.services.Prisms
 {
