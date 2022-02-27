@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace GeomLAB.services
@@ -7,12 +8,12 @@ namespace GeomLAB.services
     {
         public static int[] GetFactors(int number)
         {
+            if (number <= 1) return Array.Empty<int>();
+            
             List<int> result = new();
-
             while (number % 2 == 0)
             {
                 result.Add(2);
-
                 number /= 2;
             }
 
@@ -26,9 +27,7 @@ namespace GeomLAB.services
             }
 
             if (number > 2)
-            {
-                result.Add(number);
-            }
+                result.Add(number);    
 
             return result.ToArray();
         }
@@ -51,7 +50,6 @@ namespace GeomLAB.services
             }
 
             List<int> result = new();
-
             for (byte i = 0; i < First.Length; i++)
             {
                 if (Array.IndexOf(Second, First[i]) != -1)
@@ -71,7 +69,6 @@ namespace GeomLAB.services
             }
 
             int[] result = Array.Empty<int>();
-
             for (byte i = 0; i < Factors.Length; i++)
             {
                 result = GetCommonFactor(result, Factors[i]);
