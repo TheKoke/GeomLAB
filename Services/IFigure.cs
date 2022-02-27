@@ -25,7 +25,7 @@ namespace GeomLAB.services
         /// Return count of Corners of this Figure.
         /// </summary>
         /// <returns></returns>
-        public byte CountOfCorners();
+        public int CountOfCorners();
 
         /// <summary>
         /// Method Perimeter.

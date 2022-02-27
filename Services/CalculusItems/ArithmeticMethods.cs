@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace GeomLAB.services
@@ -17,7 +16,7 @@ namespace GeomLAB.services
                 number /= 2;
             }
 
-            for (byte i = 3; i <= Math.Sqrt(number); i += 2)
+            for (int i = 3; i <= Math.Sqrt(number); i += 2)
             {
                 while (number % i == 0)
                 {
@@ -27,7 +26,9 @@ namespace GeomLAB.services
             }
 
             if (number > 2)
-                result.Add(number);    
+            {
+                result.Add(number);
+            }   
 
             return result.ToArray();
         }
@@ -50,7 +51,7 @@ namespace GeomLAB.services
             }
 
             List<int> result = new();
-            for (byte i = 0; i < First.Length; i++)
+            for (int i = 0; i < First.Length; i++)
             {
                 if (Array.IndexOf(Second, First[i]) != -1)
                 {

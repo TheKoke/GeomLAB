@@ -58,7 +58,7 @@ namespace GeomLAB.services.Triangles
         {
             bool isprop = false;
 
-            for (byte i = 0; i < tr1.Sides.Length; i++)
+            for (int i = 0; i < tr1.Sides.Length; i++)
             {
                 if (tr1.Sides[i] % tr2.Sides[i] == 0)
                 {
@@ -80,7 +80,7 @@ namespace GeomLAB.services.Triangles
         {
             if (Sides.Length != 3)
             {
-                for (byte i = 0; i < Sides.Length; i++)
+                for (int i = 0; i < Sides.Length; i++)
                 {
                     Angles[i] = (180 / Sides.Sum() * Sides[i]).ToString();
                 }
@@ -96,19 +96,19 @@ namespace GeomLAB.services.Triangles
             {
                 int[] Commons = Array.Empty<int>();
 
-                for (byte i = 0; i < Angles.Length; i++)
+                for (int i = 0; i < Angles.Length; i++)
                 {
                     Commons = GetCommonFactor(Commons, GetFactors(int.Parse(Angles[i])));
                 }
 
                 int multi = 1;
 
-                for (byte i = 0; i < Commons.Length; i++)
+                for (int i = 0; i < Commons.Length; i++)
                 {
                     multi *= Commons[i];
                 }
 
-                for (byte i = 0; i < Angles.Length; i++)
+                for (int i = 0; i < Angles.Length; i++)
                 {
                     Sides[i] = int.Parse(Angles[i]) / multi;
                 }
@@ -173,7 +173,7 @@ namespace GeomLAB.services.Triangles
             return Sides.Sum();
         }
 
-        public byte CountOfCorners()
+        public int CountOfCorners()
         {
             return 3;
         }
