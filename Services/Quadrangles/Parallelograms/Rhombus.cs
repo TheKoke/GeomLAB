@@ -5,18 +5,16 @@ namespace GeomLAB.services.Quadrangles
     public class Rhombus : Parallelogram
     {
         public Rhombus() : base()
-        {
+        { }
 
-        }
-
-        public Rhombus(float a, string bigangle, string smallangle) : this()
+        public Rhombus(float side, string bigangle, string smallangle) : this()
         {
             if (int.Parse(bigangle) + int.Parse(smallangle) == 180)
             {
                 BigAngle = bigangle;
                 SmallerAngle = smallangle;
 
-                for (byte i = 0; i < Sides.Length; i++)
+                for (int i = 0; i < Sides.Length; i++)
                 {
                     if (i % 2 == 0)
                     {
@@ -27,7 +25,7 @@ namespace GeomLAB.services.Quadrangles
                         Angles[i] = bigangle;
                     }
 
-                    Sides[i] = a;
+                    Sides[i] = side;
                 }
 
                 SetHeights();
@@ -41,7 +39,7 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetDiagonales()
         {
-            for (byte i = 0; i < Diagonales.Length; i++)
+            for (int i = 0; i < Diagonales.Length; i++)
             {
                 Diagonales[i] = Sides[i] * (1 - new Trigonometry(5).Sin(SmallerAngle));
             }

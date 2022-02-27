@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace GeomLAB.services.Quadrangles
 {
@@ -9,16 +8,14 @@ namespace GeomLAB.services.Quadrangles
         public string SmallerAngle { get; protected set; }
 
         public Parallelogram() : base()
-        {
+        { }
 
-        }
-
-        public Parallelogram(float longSide, float shortSide, string bigAngle, string smallerAngle) : this()
+        public Parallelogram(float longSide, float shortSide, string bigangle, string smallerangle) : this()
         {
-            if (int.Parse(bigAngle) + int.Parse(smallerAngle) == 180 && longSide > shortSide)
+            if (int.Parse(bigangle) + int.Parse(smallerangle) == 180 && longSide > shortSide)
             {
-                BigAngle = bigAngle;
-                SmallerAngle = smallerAngle;
+                BigAngle = bigangle;
+                SmallerAngle = smallerangle;
 
                 for (byte i = 0; i < Sides.Length; i++)
                 {
@@ -26,11 +23,12 @@ namespace GeomLAB.services.Quadrangles
                     {
                         Sides[i] = shortSide;
                         Angles[i] = SmallerAngle;
-                        continue;
                     }
-
-                    Sides[i] = longSide;
-                    Angles[i] = BigAngle;
+                    else
+                    {
+                        Sides[i] = longSide;
+                        Angles[i] = BigAngle;
+                    }
                 }
 
                 SetHeights();
@@ -46,15 +44,14 @@ namespace GeomLAB.services.Quadrangles
         {
             for (byte i = 0; i < Diagonales.Length; i++)
             {
-                Diagonales[i] = (float)Math.Pow(Sides[i], 2) + (float)Math.Pow(Sides[i + 1], 2);
-
                 if (i % 2 == 0)
                 {
-                    Diagonales[i] -= 2 * Sides[i] * Sides[i + 1] * new Trigonometry(5).Cos(SmallerAngle);
-                    continue;
+                    Diagonales[i] = Triangles.SinCosMethods.CosinesTheorem(Sides[i], Sides[i + 1], SmallerAngle);
                 }
-
-                Diagonales[i] -= 2 * Sides[i] * Sides[i + 1] * new Trigonometry(5).Cos(BigAngle);
+                else
+                {
+                    Diagonales[i] = Triangles.SinCosMethods.CosinesTheorem(Sides[i], Sides[i + 1], BigAngle);
+                }
             }
         }
 
@@ -63,10 +60,7 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetRadiuses()
         {
-            if (Sides.Where(x => Array.IndexOf(Sides, x) % 2 == 1).Sum() == Sides.Where(x => Array.IndexOf(Sides, x) % 2 == 0).Sum())
-            {
-                InscribedRadius = Heights[3] / 2;
-            }
+            InscribedRadius = 0;
 
             CircumscribedRadius = 0;
         }
@@ -82,7 +76,7 @@ namespace GeomLAB.services.Quadrangles
             }
         }
 
-        private int MapperForIndex(int index) => index switch
+        private static int MapperForIndex(int index) => index switch
         {
             0 => 3,
             1 => 2,

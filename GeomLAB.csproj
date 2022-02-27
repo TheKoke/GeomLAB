@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="db\**" />
+    <EmbeddedResource Remove="db\**" />
+    <None Remove="db\**" />
+    <Page Remove="db\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="fonts\Dosis.ttf" />
   </ItemGroup>
 
@@ -14,10 +21,6 @@
     <EmbeddedResource Include="fonts\Dosis.ttf">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="db\" />
   </ItemGroup>
 
 </Project>

@@ -12,9 +12,7 @@ namespace GeomLAB.services.Quadrangles
         public float MidSegment { get; protected set; }
 
         public Trapezoid() : base()
-        {
-
-        }
+        { }
 
         public Trapezoid(float[] bases, float[] legs, string[] angles) : this()
         {
@@ -28,20 +26,6 @@ namespace GeomLAB.services.Quadrangles
                 Array.Copy(Bases, Sides, 2);
                 Array.ConstrainedCopy(Legs, 0, Sides, 2, 2);
 
-                for (byte i = 0; i < angles.Length; i++)
-                {
-                    string temp;
-                    for (int j = 0; j < angles.Length; j++)
-                    {
-                        if (int.Parse(angles[i]) > int.Parse(angles[j]))
-                        {
-                            temp = angles[i];
-                            angles[i] = angles[j];
-                            angles[j] = temp;
-                        }
-                    }
-                }
-
                 Array.Copy(angles, Angles, 4);
 
                 SetHeights();
@@ -54,15 +38,16 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetDiagonales()
         {
-            for (byte i = 0; i < Diagonales.Length; i++)
+            for (int i = 0; i < Diagonales.Length; i++)
             {
                 if (i % 2 == 0)
                 {
                     Diagonales[i] = Triangles.SinCosMethods.CosinesTheorem(Sides[0], Sides[1], Angles[1]);
-                    continue;
                 }
-
-                Diagonales[i] = Triangles.SinCosMethods.CosinesTheorem(Sides[0], Sides[3], Angles[0]);
+                else
+                {
+                    Diagonales[i] = Triangles.SinCosMethods.CosinesTheorem(Sides[0], Sides[3], Angles[0]);
+                }
             }
         }
 
@@ -71,15 +56,16 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetHeights()
         {
-            for (byte i = 0; i < Heights.Length; i++)
+            for (int i = 0; i < Heights.Length; i++)
             {
                 if (i % 2 == 0)
                 {
                     Heights[i] = Legs[0] * new Trigonometry(5).Sin(Angles[0]);
-                    continue;
                 }
-
-                Heights[i] = Bases[0] * new Trigonometry(5).Sin(Angles[1]);
+                else
+                {
+                    Heights[i] = Bases[0] * new Trigonometry(5).Sin(Angles[1]);
+                }
             }
         }
 
@@ -88,7 +74,7 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetRadiuses()
         {
-            if (Sides.Where(x => Array.IndexOf(Sides, x) % 2 == 1).Sum() == Sides.Where(x => Array.IndexOf(Sides, x) % 2 == 0).Sum())
+            if (Sides[1] + Sides[3] == Sides[2] + Sides[4])
             {
                 InscribedRadius = Heights[3] / 2;
             }

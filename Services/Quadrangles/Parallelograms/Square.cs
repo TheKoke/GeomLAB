@@ -5,15 +5,13 @@ namespace GeomLAB.services.Quadrangles
     public class Square : Rectangle
     {
         public Square() : base()
-        {
+        { }
 
-        }
-
-        public Square(float a) : this()
+        public Square(float side) : this()
         {
-            for (byte i = 0; i < Sides.Length; i++)
+            for (int i = 0; i < Sides.Length; i++)
             {
-                Sides[i] = a;
+                Sides[i] = side;
             }
 
             SetHeights();
@@ -33,7 +31,7 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetDiagonales()
         {
-            for (byte i = 0; i < Diagonales.Length; i++)
+            for (int i = 0; i < Diagonales.Length; i++)
             {
                 Diagonales[i] = Sides[i] * (float)Math.Sqrt(2);
             }
