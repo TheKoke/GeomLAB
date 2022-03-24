@@ -12,15 +12,16 @@ namespace GeomLAB.services.Quadrangles
 
         public Rectangle(float length, float width) : this()
         {
-            for (byte i = 0; i < Sides.Length; i++)
+            for (int i = 0; i < Sides.Length; i++)
             {
                 if (i % 2 == 0)
                 {
                     Sides[i] = width;
-                    continue;
                 }
-
-                Sides[i] = length;
+                else
+                {
+                    Sides[i] = length;
+                }
             }
 
             SetHeights();
@@ -41,10 +42,7 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetRadiuses()
         {
-            if (Sides.Where(x => Array.IndexOf(Sides, x) % 2 == 1).Sum() == Sides.Where(x => Array.IndexOf(Sides, x) % 2 == 0).Sum())
-            {
-                InscribedRadius = Sides[0] / 2;
-            }
+            InscribedRadius = 0;
 
             CircumscribedRadius = Diagonales[0] / 2;
         }
@@ -54,7 +52,7 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetDiagonales()
         {
-            for (byte i = 0; i < Diagonales.Length; i++)
+            for (int i = 0; i < Diagonales.Length; i++)
             {
                 Diagonales[i] = (float)Math.Sqrt(Math.Pow(Sides[i], 2) + Math.Pow(Sides[i + 1], 2));
             }

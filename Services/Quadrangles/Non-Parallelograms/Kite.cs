@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using GeomLAB.services.Triangles;
 
 namespace GeomLAB.services.Quadrangles
 {
@@ -43,7 +44,7 @@ namespace GeomLAB.services.Quadrangles
                     ((180 - float.Parse(EqualAngles) / (LongSide + ShortSide)) * ShortSide).ToString()
                 };
 
-                for (byte i = 0; i < Angles.Length; i++)
+                for (int i = 0; i < Angles.Length; i++)
                 {
                     if (i % 2 == 1)
                     {
@@ -51,7 +52,7 @@ namespace GeomLAB.services.Quadrangles
                         continue;
                     }
 
-                    for (byte j = (byte)(i < 2 ? 0 : 1); j < vertices.Length; j++)
+                    for (int j = i < 2 ? 0 : 1; j < vertices.Length; j++)
                     {
                         Angles[i] = (float.Parse(vertices[j]) * 2).ToString();
                     }
@@ -64,7 +65,20 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetHeights()
         {
-            base.SetHeights();
+            for (int i = 0; i < Heights[i]; i++)
+            {
+                Triangle triangle;
+                if (i % 2 == 0)
+                {
+                    triangle = new ArbitraryTriangle(LongSide, ShortSide, Diagonales[0]);
+                }
+                else
+                {
+                    triangle = new Isosceles(LongSide, Diagonales[1]);
+                }
+
+                Heights[i] = 2 * triangle.Area() / LongSide;
+            }
         }
 
         /// <summary>
@@ -72,11 +86,11 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetRadiuses()
         {
-            InscribedRadius = Diagonales.Min();
+            InscribedRadius = Diagonales.Min(); // this is approximately
 
             if (EqualAngles == "90")
             {
-               CircumscribedRadius = Math.Sqrt(LongSide * LongSide + ShortSide * ShortSide) / 2;
+               CircumscribedRadius = (float)Math.Sqrt(LongSide * LongSide + ShortSide * ShortSide) / 2;
             }
         }
 
@@ -85,15 +99,16 @@ namespace GeomLAB.services.Quadrangles
         /// </summary>
         protected override void SetDiagonales()
         {
-            for (byte i = 0; i < Diagonales.Length; i++)
+            for (int i = 0; i < Diagonales.Length; i++)
             {
                 if (i % 2 == 0)
                 {
-                    Diagonales[i] = Triangles.SinCosMethods.CosinesTheorem(LongSide, ShortSide, EqualAngles);
-                    continue;
+                    Diagonales[i] = SinCosMethods.CosinesTheorem(LongSide, ShortSide, EqualAngles);
                 }
-
-                Diagonales[i] = Triangles.SinCosMethods.CosinesTheorem(LongSide, ShortSide, Array.ConvertAll(Angles, int.Parse).Min().ToString());
+                else
+                {
+                    Diagonales[i] = SinCosMethods.CosinesTheorem(LongSide, ShortSide, Angles.First(x => x != EqualAngles));
+                }
             }
         }
 
