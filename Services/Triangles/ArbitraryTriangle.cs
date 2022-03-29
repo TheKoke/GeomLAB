@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Linq;
 
-#pragma warning disable CS0659
-
 namespace GeomLAB.services.Triangles
 {
     public class ArbitraryTriangle : Triangle
     {
         public ArbitraryTriangle() : base()
-        {
-
-        }
+        { }
 
         public ArbitraryTriangle(float a, float b, float c) : this()
         {
@@ -63,23 +59,9 @@ namespace GeomLAB.services.Triangles
         /// </summary>
         protected override void SetHeights()
         {
-            Trigonometry trg = new(5);
-
-            float[] AnglesInRadians = Array.ConvertAll(Angles, float.Parse);
-
-            for (byte i = 0; i < AnglesInRadians.Length; i++)
+            for (int i = 0; i < Altitudes.Length; i++)
             {
-                AnglesInRadians[i] *= (float)Math.PI / 180;
-            }
-
-            for (byte i = 0; i < Altitudes.Length; i++)
-            {
-                Altitudes[i] = Sides[i] / trg.Sin(AnglesInRadians.Where(x => Array.IndexOf(AnglesInRadians, x) != i).Sum());
-
-                for (byte j = 0; j < AnglesInRadians.Where(x => Array.IndexOf(AnglesInRadians, x) != i).Count(); j++)
-                {
-                    Altitudes[i] *= trg.Sin(AnglesInRadians.Where(x => Array.IndexOf(AnglesInRadians, x) != i).ElementAt(j));
-                }
+                Altitudes[i] = Area() / (2 * Sides[i]);
             }
         }
 
@@ -98,16 +80,15 @@ namespace GeomLAB.services.Triangles
         /// <returns></returns>
         public override float Area()
         {
-            float smallerSidesMultiply = 1;
-
-            for (byte i = 0; i < Sides.Where(x => x != Sides.Max()).Count(); i++)
+            float area = 1;
+            float semiperimeter = Perimeter() / 2;
+            
+            for (int i = 0; i < Sides.Length; i++)
             {
-                smallerSidesMultiply *= Sides.Where(x => x != Sides.Max()).ElementAt(i);
+                area *= semiperimeter - Sides[i];
             }
-
-            byte indexOfMaxDegree = (byte)Array.IndexOf(Array.ConvertAll(Angles, int.Parse), Array.ConvertAll(Angles, int.Parse).Max());
-
-            return (float)(smallerSidesMultiply * new Trigonometry(5).Sin(Angles[indexOfMaxDegree]));
+            
+            return (float)Math.Sqrt(area);
         }
     }
 }
