@@ -26,7 +26,7 @@ namespace GeomLAB.services.Triangles
 
         public Right(string FirstAngle, string SecondAngle) : this()
         {
-            if (Array.ConvertAll(new string[] { FirstAngle, SecondAngle }, int.Parse).Sum() + 90 == 180)
+            if (int.Parse(FirstAngle) + int.Parse(SecondAngle) + 90 == 180)
             {
                 Angles = new string[3] { FirstAngle, SecondAngle, "90" };
 
@@ -41,16 +41,16 @@ namespace GeomLAB.services.Triangles
         /// </summary>
         protected override void SetHeights()
         {
-            for (byte i = 0; i < Altitudes.Length; i++)
+            for (int i = 0; i < Altitudes.Length; i++)
             {
                 if (Sides[i] == Sides.Max())
                 {
                     Altitudes[i] = 2 * Area() / Sides[i];
-
-                    continue;
                 }
-
-                Altitudes[i] = Sides[i];
+                else
+                {
+                    Altitudes[i] = Sides[i];
+                }
             }
         }
 
@@ -71,9 +71,14 @@ namespace GeomLAB.services.Triangles
         {
             float result = 1;
 
-            for (byte i = 1; i < Sides.Where(x => x != Sides.Max()).Count(); i++)
+            for (int i = 1; i < Sides.Length; i++)
             {
-                result *= Sides.Where(x => x != Sides.Max()).ElementAt(i);
+                if (Sides[i] == Sides.Max())
+                {
+                    continue;
+                }
+                
+                result *= Sides[i];
             }
 
             return result / 2;
