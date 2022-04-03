@@ -98,7 +98,7 @@ namespace GeomLAB.services.Quadrangles
         /// Return Count of Corners of this Figure.
         /// </summary>
         /// <returns></returns>
-        public byte CountOfCorners()
+        public int CountOfCorners()
         {
             return 4;
         }

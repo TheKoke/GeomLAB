@@ -23,9 +23,7 @@ namespace GeomLAB.services
         public byte AnglesNum { get; set; }
 
         public Polygon()
-        {
-
-        }
+        { }
 
         public Polygon(byte angles)
         {
@@ -77,7 +75,7 @@ namespace GeomLAB.services
             {
                 Diagonales = new float[AnglesNum * ((AnglesNum - 3) / 2)];
 
-                for (byte i = 0; i < Diagonales.Length; i++)
+                for (int i = 0; i < Diagonales.Length; i++)
                 {
                     Diagonales[i] = Triangles.SinCosMethods.CosinesTheorem(Sides[0], Sides[1], RightDegree());
                 }
@@ -106,7 +104,7 @@ namespace GeomLAB.services
         /// Returns count of corners this Figure
         /// </summary>
         /// <returns></returns>
-        public byte CountOfCorners()
+        public int CountOfCorners()
         {
             return AnglesNum;
         }
@@ -135,18 +133,14 @@ namespace GeomLAB.services
         /// <returns></returns>
         public float Area()
         {
-            float result;
-
             if (IsRegular)
             {
-                result = (float)(AnglesNum / 4 * Math.Pow(Sides[0], 2) * new Trigonometry(3).Cot((float)Math.PI / AnglesNum));
+                return AnglesNum / 4 * (float)Math.Pow(Sides[0], 2) * new Trigonometry(5).Cot((float)Math.PI / AnglesNum);
             }
             else
             {
-                result = uint.MaxValue;
+                return uint.MaxValue;
             }
-
-            return result;
         }
     }
 }

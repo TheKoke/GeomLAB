@@ -11,9 +11,7 @@ namespace GeomLAB.services
         public byte Rounding { get; set; }
 
         public InverseTrigonometry()
-        {
-
-        }
+        { }
 
         public InverseTrigonometry(byte roundNum)
         {
