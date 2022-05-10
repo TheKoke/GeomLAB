@@ -90,5 +90,10 @@ namespace GeomLAB.services.Triangles
             
             return (float)Math.Sqrt(area);
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

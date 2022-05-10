@@ -18,9 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="fonts\Dosis.ttf">
+    <Resource Include="fonts\Dosis.ttf">
       <CopyToOutputDirectory></CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Resource>
   </ItemGroup>
 
 </Project>
